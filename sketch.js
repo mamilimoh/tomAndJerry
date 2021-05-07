@@ -15,7 +15,6 @@ function setup(){
     tom=createSprite(750,450);
     tom.addAnimation("cat",cat);
     tom.scale=0.1;
-
     jerry=createSprite(150,425);
     jerry.addAnimation("mouseStanding",mouse);
     jerry.scale=0.1;
@@ -29,11 +28,11 @@ function setup(){
 function draw() {
 
     background(bg);
-    keyPressed();
     
-    //if(tom.x-jerry.x<(tom.width-jerry.width)/2){
-        if(tom.isTouching(jerry)){
+    if(tom.x-jerry.x<(tom.width-jerry.width)/2){
+       // if(tom.isTouching(jerry)){
         tom.velocityX=0;
+        tom.x=240;
         tom.addAnimation("tomlastImage",cat2);
         tom.changeAnimation("tomlastImage");
 
